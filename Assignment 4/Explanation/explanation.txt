@@ -1,0 +1,41 @@
+# Task 1A
+To create an adjacency matrix, we read from the files and insert it in our
+2D array. u representing the row, and v is the column
+# Task 1B
+To create an adjacency matrix, we first make an array of length(vertices+1).
+I am keeping 0th index to access my array easily as the vertices are 1 based.
+Starting from 1, each index of the array represents a vertex. And in each index, we keep all the
+connections of that vertex.
+# Task 2
+First I make an adjacency list. Considering the source as 1, we first push it in the queue.
+In the visited array, white presents unvisited, grey represents visited and black represents explored.
+As we start from 1 in the queue, that means it's already visited, so we update it in the visited array.
+In the while loop. We dequeue first and push all of its unvisited neighbours in the queue. When the inner for loop
+is done that means that it's completely explored. So, it's marked black.
+# Task 3
+We have to perform dfs here. I use the same coloring technique as I've used in the task 2.
+We start with the source and move on to it's neighbour. Instead of exploring all the sources neighbour like we did in bfs,
+we move on to another neighbour of it's neighbour recursively. Once we reach an end point we return to it's parent node start
+exploring another one of it's neighbour.
+# Task 4
+Here, We try to find if the graph er cyclic or not. We can use dfs to solve this problem.
+While traversing in dfs if we come across a neighbour that's grey(visited but not explored) that would mean
+its a back edge and there exists a cycle. So, in the inner for loop we check if any one of the current node's neighbour is grey.
+If so, we just return True.
+# Task 5
+Here we find the sortest path. While traversing using bfs, we keep track of parents and the distance from the source.
+Source would have a parent None and distance 0(source form source). While traversing, we update the parents array and distance.
+distance[current] would be distance[its parent] + 1. Now, in the shortest path function we just start from the destination. We look for
+its parent and then parent of its parent and so on. In this way we get a path form destination to source(reverse of what we wanted).
+And the time is basically the number of edges between the source and destination which we keep track in the distance array.
+# Task 6
+We have to find the number of maximum diamonds we can collect in the map. Here we Use a 1D array of strings to store the array. The strings
+all having the same length gives us a chance of traversing and accessing it like a 2D array. We also create a 2D array called visited to keep track and
+in the outer function we just start dfs from every vertex of map that is '.' to see the maximum diamonds we can get for that starting position and
+we keep updating the maxD value. In the inner functions, we first define our base case:
+so our r pointer has be between 0 and number of rows(len(map)) and c pointer has to be between 0 and number of columns.
+If it isn't that means we just hit a dead end which is basically the edge of the map so I just return 0.
+Another base case would be hitting an obstacle that means we can't go down that road so I also return 0.
+Now, everytime we find D that means we just got one diamond and we increase the diamond count by 1
+The array move represents the directions we can move to. We can either move left right up or down.
+So starting from a single source we find every possible way we can go until hitting a dead end or a obstacle.

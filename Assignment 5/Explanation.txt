@@ -1,0 +1,23 @@
+# Task 1A
+Here, I implement dfs and record the finish time of dfs. We use that finish time to
+to topologically sort the graph. If there is a back edge which we find by using the start
+and the finish time, we know topological sorting is not possible hence there is no valid course
+sequence so we output 'Impossible'.
+
+# Task 1B
+It's similar to task 1. But instead of Dfs we use Khan's algorithm to topologically sort the array.
+We calculate the in-degree of each node. All the nodes that has an in-degree of 0, It means these nodes
+have no prerequisite courses, and we push it in the queue. Each time we visit a vertex we reduce the in-degree
+of that vertex by 1 and check that if it has become 0 or not. If it's in-degree becomes 0, we push it in the queue.
+finally if the length of our topologically sorted order is same as total length of Graph, that means there exists a
+valid sequence
+
+# Task 2
+It's exactly same as task 1B, but as we are finding the lexicographically small order, Instead of regular Queue, we use a
+min heap queue. In this way, I make sure that the smallest possible value is unpacked every time so it maintains a lexicographical
+order.
+
+# Task 3
+I use Kosaraju's Algorithm to find the total number of strongly connected components in the graph. First I run the dfs algoritm to get
+the topologically sorted stack. I then run dfs once again on a transpose of the original graph using the stack from first dfs. In this way, for the
+transpose graph dfs runs a total of number of strongly connected components time. And every time we track the nodes to get our desired output.

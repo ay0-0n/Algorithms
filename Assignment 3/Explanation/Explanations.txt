@@ -1,0 +1,27 @@
+#Task 1
+    Here, we are counting number of inversion in a array by modifying the merge sort algorithm. In the
+    _mergeSort function we have to consider 3 parts. Number of inversions in the left subarray , number of inversion
+    in the right subarray and lastly number of inversion in the merged array. Lastly, we add all 3 cases to get our
+    total number of inversion. In the merge function, We check if a1[i] (in the left array) is bigger than a2[j] (in the right array),
+    if we find it then we increase the inversion count by (n1 - i). We do this because as two of the arrays are sorted,
+    if there's in inversion for the ith index in the left array, that would also indicate that index from i+1 to n1-1
+    would also cause an inversion for that particular value in the right array.
+
+#Task 2
+    Similar to task 1, we consider 3 cases. max equation value in the right subarray, left subarray and merged array where i in
+    the left half and j is in the right half. For the base case, when there's only 1 element, The equation cannot be met, so we return the minimum possible value.
+    Another base case would be when there's only 2 elem, there can be only one value so we just return that value.
+    now we find the max equation value or left and right. We then find the max of left and max absolute value of right array.
+    We are taking the absolute value because while finding the square the sign wouldn't matter. Finally, we return the maximum of all three cases to get our desired answer.
+
+#Task3
+    I'm using the quick sort algorithm to sort the array. Quick sort works on the principle that a element in an array is sorted if all the
+    values left are smaller and all the values of right are bigger. In the QuickSort function we call the partition function for the whole array.
+    In the partition function we select one element as pivot and find the sorted position for the pivot. After the partition function is over that means our pivot is in the correct index.
+    So we just return that index and call QuickSort on left part of that index and right part of that index.
+
+#Task4
+    Here, in the kth_smallest_num function, the base case is if there is only one element, the kth value would be just that.(Considering k would not be out of range).
+    now we call the partition function which is same as quickSort partition. Partition function sort a single element, and return it's index. If that index + 1 = k (k is one based indexing)
+    that would mean that we found our desired kth number. If not, then there can be two cases. If the index is bigger that would indicate we now have to look only in the left part of the array as after the first partition call
+    everything left of that that idx is smaller. Likewise, if the index is smaller than k, then we would only look for it in the right part of the idx.

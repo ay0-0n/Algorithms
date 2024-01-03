@@ -1,0 +1,15 @@
+# Task 1
+We first read the file to store it in an adjacency list. Then we apply Dijkstra's algorithm from the source.
+In Dijkstra's algorithm, we start form the source and put it in a priority queue. During the traversal,we
+select the node with the smallest distance, relax its outgoing edges to update the distance. If after the traversal,
+any node has a distance of 9999, that means the node is not reachable from the source.
+
+# Task 2
+We use a similar approach as task1 in the task2. But, instead of applying Dijkstra from one source, we apply
+it for 2 sources and get the distance array. We now, keep a pointer and check if we can find a common node between them which
+takes the minimum time. If we can't that means it can't be done.
+
+# Task 3
+Here, We again use Dijkstra's algoritm by modifying it a little. The priority queue now stores pairs represents the maximum danger level
+encountered along the path to the current node, and the node. During traversal, we calculate the maximum danger we faced so far and the danger thats
+ahead. If the danger is less that distance, We just update the distance array.

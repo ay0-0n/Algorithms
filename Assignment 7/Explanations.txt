@@ -1,0 +1,13 @@
+# Task 1
+We use a greedy approach in this problem. We first sort the data by finish time. We pick the first one
+the go through all the solutions to see if that clashes with any of our ans. If it doesn't we add it to our solution.
+
+# Task 2
+We use a similar approach as task1 in the task2. We just take a list of len(m) to check their availability. Every time we pick a interval we
+check if it has already been assigned to someone. If it hasn't then we just check if the start time is bigger than or equal that the assigned end time of
+any one of m person. If so, then we just assign them the task and move on to the next interval.
+
+# Task 3
+We use Dsu for this problem.Every iteration it finds the friend circles that person A and person B belong to.
+Which we keep track with the dictionary. If they are already in the same circle, it prints the size of that circle.
+Otherwise, it combines the circles of A and B, removes one of the circles from the circle list, and prints the size of the new combined circle.

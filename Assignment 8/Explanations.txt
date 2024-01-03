@@ -1,0 +1,16 @@
+# Task 1
+Here We can consider the cities as nodes, roads as edges and maintained cost as weights of the graph.
+I used Kruskal's algorithm to find the cost. In kruskals algorithm, I sort the weights in an increasing order,
+picking the smallest weight every time. I use union find to check for a cycle while picking mst's. This is a Greedy approach.
+
+# Task 2
+We use a similar approach as Fibonacci in this problem. I use a list to store the ways for each step. To reach the Nth step,
+the frog can either come from the N-1th step or the N-2th step.So,we can relate this to the Fibonacci sequence,
+where each term is the sum of the two preceding terms.
+
+# Task 3
+We use a recursive approch and memorization to solve the problem. dp stores the minimum number of coins required to make amount i
+using the first j coin denominations. The base case for the recursion is when amount becomes 0,in which case 0 coins are required.
+If the value in dp array for this (amount, index) combination is not -1,we can just return it. for every case, we have two option.
+we can either take it or not take it. We find out both, and return the minimum at each step.
+We also save it in dp array for memorization.
